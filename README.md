@@ -1,18 +1,17 @@
-vault-users Cookbook
-====================
+# vault-users Cookbook
 
 Configures system users using a specific JSON data structure encrypted using
 [Chef Vault][].
 
-Requirements
-------------
+[Chef Vault]: https://github.com/Nordstrom/chef-vault
+
+## Requirements
 
 * `chef-vault`.
 
 Only tested on Ubuntu 12.04.
 
-Usage
------
+## Usage
 
 It expects a Chef Vault encrypted vault called `secrets` with an item named `users`.
 Then, the data structure should be an array of 'users', like below:
@@ -44,8 +43,7 @@ run_list [
 ]
 ```
 
-Contributing
-------------
+## Contributing
 
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
@@ -54,9 +52,7 @@ Contributing
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
 
-License and Authors
--------------------
+## License and Authors
 
-Authors: Nick Charlton <hello@nickcharlton.net>    
-License: Apache v2
+Copyright (c) Nick Charlton 2013. License: Apache v2.
 
