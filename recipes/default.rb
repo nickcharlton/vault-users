@@ -17,10 +17,9 @@
 # limitations under the License.
 #
 
-chef_gem 'chef-vault'
-require 'chef-vault'
+include_recipe 'chef-vault'
 
-vault = ChefVault::Item.load('secrets', 'users')
+vault = chef_vault_item('secrets', 'users')
 
 vault['users'].each do |u|
   user u['username'] do
