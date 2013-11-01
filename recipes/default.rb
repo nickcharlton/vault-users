@@ -22,7 +22,7 @@ include_recipe 'chef-vault'
 begin
   vault = chef_vault_item('secrets', 'users')
 rescue OpenSSL::PKey::RSAError
-  vault = Hash['users'][] # allow the recipe to silently fall through
+  vault = {'users' => []} # allow the recipe to silently fall through
   Chef::Log.warn('VaultUsers didn\'t configure any users as it could not decrypt'\
     'the Vault. This may not be what you want.')
 end
