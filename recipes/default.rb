@@ -19,6 +19,8 @@
 
 include_recipe 'chef-vault'
 
+gem_package 'ruby-shadow'
+
 begin
   vault = chef_vault_item('secrets', 'users')
 rescue OpenSSL::PKey::RSAError, ChefVault::Exceptions::SecretDecryption
